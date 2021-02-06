@@ -6,7 +6,7 @@
 	<name>Maven POM recorder</name>
 	<description>Instrumentation agent for recording use of POMs in the
 		~/.m2/repository during Maven builds</description>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<url>https://github.com/skjolber/maven-pom-recorder</url>
 
 	<organization>
