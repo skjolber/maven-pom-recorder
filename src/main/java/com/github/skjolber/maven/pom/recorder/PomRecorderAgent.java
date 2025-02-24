@@ -29,7 +29,7 @@ public class PomRecorderAgent {
 	}
 
 	private static File createJarFile() throws IOException, FileNotFoundException {
-		File f = new File(PomRecorder.M2_DIRECTORY, "maven-pom-recorder-agent.jar");
+		File f = new File(PomRecorder.getM2Directory(), "maven-pom-recorder-agent.jar");
 
 		ZipOutputStream out = new ZipOutputStream(new FileOutputStream(f));
 
