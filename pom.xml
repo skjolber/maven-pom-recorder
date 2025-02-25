@@ -6,7 +6,7 @@
 	<name>Maven POM recorder</name>
 	<description>Instrumentation agent for recording use of POMs in the
 		~/.m2/repository during Maven builds</description>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<url>https://github.com/skjolber/maven-pom-recorder</url>
 
 	<organization>
@@ -33,7 +33,7 @@
 		<connection>scm:git:git@github.com:skjolber/maven-pom-recorder.git</connection>
 		<developerConnection>scm:git:git@github.com:skjolber/maven-pom-recorder.git</developerConnection>
 		<url>git@github.com:skjolber/maven-pom-recorder.git</url>
-		<tag>agent-1.0.0</tag>
+		<tag>agent-1.0.1</tag>
 	</scm>
 
 	<issueManagement>
