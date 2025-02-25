@@ -53,7 +53,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- dependencies -->
-		<asm.version>9.6</asm.version>
+		<asm.version>9.7.1</asm.version>
 
 		<!-- plugins -->
 		<!-- plugins -->
