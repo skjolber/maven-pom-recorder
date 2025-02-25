@@ -16,13 +16,23 @@ public class PomRecorder extends Thread {
 	public static final PomRecorder instance = new PomRecorder();
 
 	protected static final String M2_DIRECTORY = System.getProperty("user.home") + "/.m2";
-	protected static final String M2_REPOSITORY_DIRECTORY = M2_DIRECTORY + "/repository";
+	protected static final String M2_REPOSITORY_DIRECTORY = "/repository";
 
 	public static void record(File file) {
 		String name = file.getAbsolutePath();
-		if(name.endsWith(".pom") && name.startsWith(M2_REPOSITORY_DIRECTORY)) {
+		if(name.endsWith(".pom") && name.startsWith(getMavenRepository())) {
 			instance.add(name);
 		}
+	}
+
+	public static String getM2Directory() {
+		String fromEnv = System.getenv("POM_RECORDER_M2_DIR");
+		if (fromEnv == null) { return M2_DIRECTORY; }
+		return fromEnv;
+	}
+
+	public static String getMavenRepository() {
+		return getM2Directory() + M2_REPOSITORY_DIRECTORY;
 	}
 
 	private final Set<String> poms = Collections.newSetFromMap(new ConcurrentHashMap<>());
@@ -38,7 +48,7 @@ public class PomRecorder extends Thread {
 	public void close() {
 		File file;
 		do {
-			file = new File(M2_DIRECTORY, "maven-pom-recorder-poms-" + randomId() + ".txt");
+			file = new File(getM2Directory(), "maven-pom-recorder-poms-" + randomId() + ".txt");
 		} while(file.exists());
 
 		FileOutputStream fout = null;
