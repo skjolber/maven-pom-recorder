@@ -13,6 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class PomRecorder extends Thread {
 
+	public static final String M2_DIRECTORY_PROPERTY = "POM_RECORDER_M2_DIR";
+
 	public static final PomRecorder instance = new PomRecorder();
 
 	protected static final String M2_DIRECTORY = System.getProperty("user.home") + "/.m2";
@@ -26,9 +28,13 @@ public class PomRecorder extends Thread {
 	}
 
 	public static String getM2Directory() {
-		String fromEnv = System.getenv("POM_RECORDER_M2_DIR");
-		if (fromEnv == null) { return M2_DIRECTORY; }
-		return fromEnv;
+		String fromProperties = System.getProperty(M2_DIRECTORY_PROPERTY);
+		if(fromProperties != null) {
+			return fromProperties;
+		}
+		String fromEnv = System.getenv(M2_DIRECTORY_PROPERTY);
+		if (fromEnv != null) { return fromEnv; }
+		return M2_DIRECTORY;
 	}
 
 	public static String getMavenRepository() {

@@ -1,4 +1,7 @@
-
+jmh/dependency-reduced-pom.xml
+visualizer/viewer/public/assets/containers.json
+.idea
+.metadata
 *.iml
 .gradle
 /local.properties
@@ -8,7 +11,10 @@
 /build
 /captures
 /target
-**/*/.attach_pid*
+jmh-result.json
+
+**/*.factorypath
+**/*.attach_pid*
 
 #standard-kataloger for deriverte data
 target/
@@ -69,4 +75,10 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 Contact GitHub API Training Shop Blog About
+
+# PBT with JQwik
+.jqwik-database
+
+node_modules
+pom.xml.versionsBackup
 

@@ -23,12 +23,13 @@ The agent modifies the source code of the [FileSource](https://github.com/apache
 ## Shaded contents
 
  * ASM
- 
+
 ## License
 [Apache 2.0]
 
 # History
 
+ - 1.0.1: Make .m2 directory configurable via system property or environment variable `POM_RECORDER_M2_DIR`
  - 1.0.0: Initial release
  
 [Apache 2.0]:           http://www.apache.org/licenses/LICENSE-2.0.html
